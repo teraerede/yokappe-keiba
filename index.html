@@ -5,6 +5,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>よかっぺ競馬 - AI予測ダッシュボード</title>
+        <!-- カスタムアイコンの設定 -->
+        <link rel="icon" href="icon.jpg">
+        <link rel="apple-touch-icon" href="icon.jpg">
         <style>
             :root { 
                 --primary: #10b981; 
@@ -21,7 +24,6 @@
             * { box-sizing: border-box; margin: 0; padding: 0; }
             body { font-family: 'Helvetica Neue', 'Hiragino Sans', 'Meiryo', sans-serif; background-color: var(--bg); color: var(--text); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
             
-            /* ヘッダー */
             header { 
                 background: linear-gradient(135deg, #10b981 0%, #059669 100%); 
                 color: white; 
@@ -43,11 +45,11 @@
                 transition: background 0.2s;
             }
             .menu-toggle:hover { background: rgba(255,255,255,0.3); }
-            h1 { font-size: 1.3rem; font-weight: 800; letter-spacing: 0.5px; }
+            h1 { font-size: 1.3rem; font-weight: 800; letter-spacing: 0.5px; transition: opacity 0.2s; }
+            h1:hover { opacity: 0.8; }
             
             .app-container { display: flex; flex: 1; overflow: hidden; position: relative; }
             
-            /* サイドバー */
             .sidebar { 
                 width: 290px; 
                 background: var(--surface); 
@@ -109,7 +111,6 @@
                 box-shadow: 0 2px 6px rgba(255, 71, 87, 0.4);
             }
             
-            /* メインエリア */
             .content-area { flex: 1; padding: 20px; overflow-y: auto; width: 100%; }
             .panel { 
                 display: none; 
@@ -125,7 +126,6 @@
             
             @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
             
-            /* ホーム画面 */
             .home-header { text-align: center; margin-bottom: 25px; }
             .home-header h2 { color: var(--primary-dark); font-size: 1.5rem; margin-bottom: 8px; font-weight: 800; }
             .stats-container { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
@@ -150,21 +150,12 @@
                 line-height: 1.7;
             }
             
-            /* レースカード & テーブル */
-            .race-header { 
-                border-bottom: 2px solid #f1f5f9; 
-                padding-bottom: 16px; 
-                margin-bottom: 20px; 
-                display: flex; 
-                justify-content: space-between; 
-                align-items: center; 
-            }
+            .race-header { border-bottom: 2px solid #f1f5f9; padding-bottom: 16px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
             .race-title { font-size: 1.35rem; font-weight: 800; color: var(--primary-dark); }
             table { width: 100%; border-collapse: separate; border-spacing: 0; margin-bottom: 20px; font-size: 0.95rem; }
             th { background-color: #f8fafc; font-weight: 700; color: var(--text-muted); padding: 12px 14px; text-align: left; border-bottom: 2px solid var(--border); }
             td { padding: 12px 14px; border-bottom: 1px solid var(--border); }
             
-            /* ポップな上位装飾 */
             .rank-1 { background-color: #fef9c3 !important; font-weight: bold; }
             .rank-1 td:first-child { color: #ca8a04; font-size: 1.05rem; }
             .rank-2 { background-color: #f1f5f9; }
@@ -172,7 +163,6 @@
             .rank-3 { background-color: #ffedd5; }
             .rank-3 td:first-child { color: #ea580c; }
             
-            /* 推奨買い目ボックス */
             .buy-box { 
                 background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%); 
                 border: 2px solid #fed7aa; 
@@ -183,7 +173,6 @@
             }
             .buy-title { font-weight: 800; color: #c2410c; margin-bottom: 8px; font-size: 1.05rem; display: flex; align-items: center; gap: 6px; }
             
-            /* スマホオーバーレイ */
             .overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); backdrop-filter: blur(2px); z-index: 15; }
             .overlay.open { display: block; }
             
@@ -197,7 +186,7 @@
     <body>
         <header>
             <button class="menu-toggle" onclick="toggleMenu()">☰ メニュー</button>
-            <h1>🏇 よかっぺ競馬</h1>
+            <h1 style="cursor: pointer;" onclick="goHome()">🏇 よかっぺ競馬</h1>
         </header>
         
         <div class="app-container">
@@ -209,17 +198,17 @@
             <div class="content-area">
                 <div id="panel-home" class="panel active">
                     <div class="home-header">
-                        <h2>🏇 AI予測ダッシュボードへようこそ</h2>
-                        <p style="color:var(--text-muted);">機械学習モデル (LightGBM) × 血統分析による自動予想システム</p>
+                        <h2>🏇 当たらなくてもよかっぺよ！</h2>
+                        <p style="color:var(--text-muted);">茨城県民が作ったAI予想サイト</p>
                     </div>
                     <div class="stats-container">
                         <div class="stat-box">
                             <div class="stat-label">🎯 厳選レース 的中率</div>
-                            <div class="stat-value">38.5%</div>
+                            <div class="stat-value">-%</div>
                         </div>
                         <div class="stat-box">
                             <div class="stat-label">💰 厳選レース 回収率</div>
-                            <div class="stat-value">112.4%</div>
+                            <div class="stat-value">-%</div>
                         </div>
                     </div>
                     <div style="text-align:center; font-size:0.8rem; color:var(--text-muted); margin-top:10px;">
@@ -228,7 +217,20 @@
                     <div class="instruction">
                         <strong>💡 使い方ガイド:</strong><br>
                         左上の「☰ メニュー」ボタンを開き、<strong>日付 ＞ 競馬場 ＞ レース番号</strong> の順にクリックしてください。<br>
-                        全頭のAI予測スコアと、期待値の高い厳選レース（<span class="badge">🔥 勝負</span>）の買い目を確認できます。
+                        全頭のAI予測スコアと、期待値の高い厳選レース（<span class="badge">🔥 勝負</span>）の買い目を確認できます。<br>
+                        障害レースは対象外なのでごじゃっぺです。<br>
+                        ※外れてもしゃあんめよ
+                    </div>
+                    
+                    <div style="margin-top: 30px; display: flex; align-items: center; background: #fff; padding: 20px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid var(--border);">
+                        <!-- 画像アイコンを組み込み -->
+                        <img src="profile.jpg" alt="開発者" style="flex-shrink: 0; width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-right: 20px; border: 3px solid #10b981; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        <div>
+                            <div style="font-weight: 800; color: var(--primary-dark); font-size: 1.1rem; margin-bottom: 5px;">開発者からのコメント</div>
+                            <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+                                「私が丹精込めて作ったAIです。LightGBMと血統データを掛け合わせ、毎週末のレースを一生懸命予想しています。当たっても外れても、競馬を一緒に楽しみましょう！」
+                            </p>
+                        </div>
                     </div>
                 </div>
     
@@ -560,6 +562,18 @@
             function toggleMenu() {
                 document.getElementById('sidebar').classList.toggle('open');
                 document.getElementById('overlay').classList.toggle('open');
+            }
+
+            // 💡 波括弧をエスケープした修正版
+            function goHome() {
+                document.querySelectorAll('.panel').forEach(el => el.classList.remove('active'));
+                document.getElementById('panel-home').classList.add('active');
+                document.querySelectorAll('.race-btn').forEach(btn => btn.classList.remove('active'));
+                if(window.innerWidth < 768) {
+                    document.getElementById('sidebar').classList.remove('open');
+                    document.getElementById('overlay').classList.remove('open');
+                }
+                window.scrollTo(0, 0);
             }
 
             function showRace(raceId, btnEl) {
