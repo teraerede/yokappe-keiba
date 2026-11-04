@@ -10,37 +10,31 @@
             * { box-sizing: border-box; margin: 0; padding: 0; }
             body { font-family: 'Helvetica Neue', 'Meiryo', sans-serif; background-color: var(--bg); color: var(--text); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
             
-            /* ヘッダー周り */
             header { background-color: var(--primary); color: white; padding: 10px 20px; display: flex; align-items: center; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
             .menu-toggle { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; margin-right: 15px; padding: 5px; }
             h1 { font-size: 1.2rem; font-weight: bold; }
             
             .app-container { display: flex; flex: 1; overflow: hidden; position: relative; }
             
-            /* ドロワーメニュー (サイドバー) */
             .sidebar { width: 280px; background: var(--surface); border-right: 1px solid var(--border); overflow-y: auto; padding: 15px; position: absolute; top: 0; bottom: 0; left: -300px; transition: left 0.3s ease; z-index: 20; box-shadow: 2px 0 5px rgba(0,0,0,0.05); }
             .sidebar.open { left: 0; }
             
-            /* 階層アコーディオン */
             details { margin-bottom: 10px; }
             summary { font-weight: bold; cursor: pointer; padding: 8px; background: var(--bg); border-radius: 6px; user-select: none; transition: background 0.2s; }
             summary:hover { background: #e2e8f0; }
-            .venue-group { margin-left: 15px; margin-top: 5px; }
-            .venue-group summary { background: none; font-size: 0.95rem; color: var(--primary); }
+            .venue-group { margin-left: 10px; margin-top: 5px; border-left: 2px solid var(--border); padding-left: 10px; }
             
-            .race-btn { display: block; width: calc(100% - 25px); text-align: left; padding: 8px 12px; margin: 4px 0 4px 25px; background: none; border: 1px solid transparent; border-radius: 6px; cursor: pointer; font-size: 0.9rem; color: var(--text); }
+            .race-btn { display: block; width: 100%; text-align: left; padding: 8px 12px; margin: 4px 0; background: none; border: 1px solid transparent; border-radius: 6px; cursor: pointer; font-size: 0.9rem; color: var(--text); }
             .race-btn:hover { background-color: #f1f5f9; }
             .race-btn.active { background-color: #eff6ff; color: var(--secondary); font-weight: bold; border-left: 3px solid var(--secondary); }
             .badge { float: right; font-size: 0.7rem; padding: 2px 6px; border-radius: 10px; background-color: var(--hot); color: white; }
             
-            /* メインコンテンツ */
             .content-area { flex: 1; padding: 20px; overflow-y: auto; transition: margin-left 0.3s ease; width: 100%; }
             .panel { display: none; max-width: 800px; margin: 0 auto; background: var(--surface); padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); animation: fadeIn 0.3s ease; }
             .panel.active { display: block; }
             
             @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
             
-            /* ホーム画面 */
             .home-header { text-align: center; margin-bottom: 30px; }
             .home-header h2 { color: var(--primary); margin-bottom: 10px; }
             .stats-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
@@ -49,7 +43,6 @@
             .stat-label { font-size: 0.9rem; color: #64748b; }
             .instruction { background: #eff6ff; border-left: 4px solid var(--secondary); padding: 15px; margin-top: 30px; border-radius: 0 8px 8px 0; }
             
-            /* テーブル・買い目 */
             .race-header { border-bottom: 2px solid var(--bg); padding-bottom: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
             .race-title { font-size: 1.3rem; font-weight: bold; color: var(--primary); }
             table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
@@ -62,7 +55,6 @@
             .buy-box { background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%); border: 1px solid #99f6e4; padding: 20px; border-radius: 8px; margin-top: 20px; }
             .buy-title { font-weight: bold; color: #0f766e; margin-bottom: 10px; }
             
-            /* オーバーレイ (スマホでメニューを開いたときの背景) */
             .overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 15; }
             .overlay.open { display: block; }
             
@@ -86,7 +78,6 @@
             </div>
             
             <div class="content-area">
-                <!-- 前書き（ホーム画面） -->
                 <div id="panel-home" class="panel active">
                     <div class="home-header">
                         <h2>🏇 AI予測ダッシュボードへようこそ</h2>
@@ -114,322 +105,322 @@
     
         <div id="panel-202605041001" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 東京 1R ｜ ダート1600m</div>
+                <div class="race-title">11月7日(土) 東京 1R ｜ ダート1600m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>イントゥーザブルー</strong></td><td>0.294</td></tr><tr class="rank-2"><td>2位</td><td><strong>パレスラン</strong></td><td>0.291</td></tr><tr class="rank-3"><td>3位</td><td><strong>フジサンインフレ</strong></td><td>0.275</td></tr><tr class=""><td>4位</td><td><strong>ニシノツムジカゼ</strong></td><td>0.274</td></tr><tr class=""><td>5位</td><td><strong>ハイファイネスト</strong></td><td>0.231</td></tr><tr class=""><td>6位</td><td><strong>ランフェザー</strong></td><td>0.226</td></tr><tr class=""><td>7位</td><td><strong>ドーンオブホープ</strong></td><td>0.177</td></tr><tr class=""><td>8位</td><td><strong>フィックスユー</strong></td><td>0.162</td></tr><tr class=""><td>9位</td><td><strong>トルタネーラ</strong></td><td>0.159</td></tr><tr class=""><td>10位</td><td><strong>ホウオウシュウ</strong></td><td>0.153</td></tr><tr class=""><td>11位</td><td><strong>サクラトップオメガ</strong></td><td>0.151</td></tr><tr class=""><td>12位</td><td><strong>チャリンコリン</strong></td><td>0.145</td></tr><tr class=""><td>13位</td><td><strong>ボディビルダー</strong></td><td>0.132</td></tr><tr class=""><td>14位</td><td><strong>ウスズミザクラ</strong></td><td>0.126</td></tr><tr class=""><td>15位</td><td><strong>サイボーグ</strong></td><td>0.121</td></tr><tr class=""><td>16位</td><td><strong>アークレイリ</strong></td><td>0.081</td></tr></table></div>
         <div id="panel-202605041002" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 東京 2R ｜ 芝1600m</div>
+                <div class="race-title">11月7日(土) 東京 2R ｜ 芝1600m</div>
                 <div><span style="color:var(--hot); font-weight:bold;">🔥 勝負</span></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>ドナフェリーチェ</strong></td><td>0.617</td></tr><tr class="rank-2"><td>2位</td><td><strong>クリガーレ</strong></td><td>0.491</td></tr><tr class="rank-3"><td>3位</td><td><strong>ダンツトリノ</strong></td><td>0.385</td></tr><tr class=""><td>4位</td><td><strong>トーセンイルン</strong></td><td>0.368</td></tr><tr class=""><td>5位</td><td><strong>ローザヴェローナ</strong></td><td>0.364</td></tr><tr class=""><td>6位</td><td><strong>セラフィムコード</strong></td><td>0.330</td></tr><tr class=""><td>7位</td><td><strong>コスモシグナス</strong></td><td>0.235</td></tr><tr class=""><td>8位</td><td><strong>キタノバトゥーキ</strong></td><td>0.091</td></tr><tr class=""><td>9位</td><td><strong>アイビークロノス</strong></td><td>0.073</td></tr><tr class=""><td>10位</td><td><strong>ヒミツヘイキ</strong></td><td>0.045</td></tr></table><div class="buy-box"><div class="buy-title">🎫 推奨買い目: 三連複1頭軸流し (10点)</div><strong>軸馬:</strong> ドナフェリーチェ<br><strong>相手:</strong> クリガーレ, ダンツトリノ, トーセンイルン, ローザヴェローナ, セラフィムコード</div></div>
         <div id="panel-202605041003" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 東京 3R ｜ 芝2000m</div>
+                <div class="race-title">11月7日(土) 東京 3R ｜ 芝2000m</div>
                 <div><span style="color:var(--hot); font-weight:bold;">🔥 勝負</span></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>アオイゲート</strong></td><td>0.528</td></tr><tr class="rank-2"><td>2位</td><td><strong>ゴールドテソーロ</strong></td><td>0.435</td></tr><tr class="rank-3"><td>3位</td><td><strong>アトミックリーチ</strong></td><td>0.400</td></tr><tr class=""><td>4位</td><td><strong>リカジョンファンク</strong></td><td>0.392</td></tr><tr class=""><td>5位</td><td><strong>サラサシンシアズ</strong></td><td>0.325</td></tr><tr class=""><td>6位</td><td><strong>グランドストーリー</strong></td><td>0.319</td></tr><tr class=""><td>7位</td><td><strong>スカイミラー</strong></td><td>0.309</td></tr><tr class=""><td>8位</td><td><strong>フィニート</strong></td><td>0.293</td></tr></table><div class="buy-box"><div class="buy-title">🎫 推奨買い目: 三連複1頭軸流し (10点)</div><strong>軸馬:</strong> アオイゲート<br><strong>相手:</strong> ゴールドテソーロ, アトミックリーチ, リカジョンファンク, サラサシンシアズ, グランドストーリー</div></div>
         <div id="panel-202605041004" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 東京 4R ｜ ダート1400m</div>
+                <div class="race-title">11月7日(土) 東京 4R ｜ ダート1400m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>ミヤルロワ</strong></td><td>0.256</td></tr><tr class="rank-2"><td>2位</td><td><strong>アマネディル</strong></td><td>0.245</td></tr><tr class="rank-3"><td>3位</td><td><strong>エコロガルディア</strong></td><td>0.245</td></tr><tr class=""><td>4位</td><td><strong>ワイワイシャイニー</strong></td><td>0.217</td></tr><tr class=""><td>5位</td><td><strong>モリノヤマセミ</strong></td><td>0.215</td></tr><tr class=""><td>6位</td><td><strong>ジャスティンバルサ</strong></td><td>0.200</td></tr><tr class=""><td>7位</td><td><strong>ホウオウビリオン</strong></td><td>0.192</td></tr><tr class=""><td>8位</td><td><strong>ピトンピンク</strong></td><td>0.191</td></tr><tr class=""><td>9位</td><td><strong>ナニワダマシイ</strong></td><td>0.184</td></tr><tr class=""><td>10位</td><td><strong>チェンジエッジ</strong></td><td>0.181</td></tr><tr class=""><td>11位</td><td><strong>レーヴマジック</strong></td><td>0.179</td></tr><tr class=""><td>12位</td><td><strong>エマリュウオー</strong></td><td>0.159</td></tr><tr class=""><td>13位</td><td><strong>アヘッドオブオール</strong></td><td>0.155</td></tr><tr class=""><td>14位</td><td><strong>グランドバッシュ</strong></td><td>0.154</td></tr><tr class=""><td>15位</td><td><strong>アワフェリシティ</strong></td><td>0.154</td></tr><tr class=""><td>16位</td><td><strong>シンクロニシティ</strong></td><td>0.073</td></tr></table></div>
         <div id="panel-202605041005" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 東京 5R ｜ 芝1800m</div>
+                <div class="race-title">11月7日(土) 東京 5R ｜ 芝1800m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>サスケサートゥル</strong></td><td>0.394</td></tr><tr class="rank-2"><td>2位</td><td><strong>ケープルグラン</strong></td><td>0.366</td></tr><tr class="rank-3"><td>3位</td><td><strong>エクアトーレ</strong></td><td>0.348</td></tr><tr class=""><td>4位</td><td><strong>シャルマンスリール</strong></td><td>0.338</td></tr><tr class=""><td>5位</td><td><strong>ヴィルアペックス</strong></td><td>0.326</td></tr><tr class=""><td>6位</td><td><strong>ハクアイソー</strong></td><td>0.321</td></tr><tr class=""><td>7位</td><td><strong>バーンユアハート</strong></td><td>0.317</td></tr><tr class=""><td>8位</td><td><strong>ラヴェーラ</strong></td><td>0.306</td></tr><tr class=""><td>9位</td><td><strong>タイセイリメンバー</strong></td><td>0.284</td></tr></table></div>
         <div id="panel-202605041006" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 東京 6R ｜ ダート2100m</div>
+                <div class="race-title">11月7日(土) 東京 6R ｜ ダート2100m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>ワンダーブリッツ</strong></td><td>0.348</td></tr><tr class="rank-2"><td>2位</td><td><strong>モデレートゲイル</strong></td><td>0.314</td></tr><tr class="rank-3"><td>3位</td><td><strong>タマモトリノ</strong></td><td>0.242</td></tr><tr class=""><td>4位</td><td><strong>ルシャルムール</strong></td><td>0.227</td></tr><tr class=""><td>5位</td><td><strong>タケルムサシ</strong></td><td>0.222</td></tr><tr class=""><td>6位</td><td><strong>クアッドフォルツァ</strong></td><td>0.212</td></tr><tr class=""><td>7位</td><td><strong>ソニックキャット</strong></td><td>0.201</td></tr><tr class=""><td>8位</td><td><strong>オルブライト</strong></td><td>0.197</td></tr><tr class=""><td>9位</td><td><strong>グランドスウェル</strong></td><td>0.175</td></tr><tr class=""><td>10位</td><td><strong>ブレイクザアイス</strong></td><td>0.173</td></tr><tr class=""><td>11位</td><td><strong>ピードモント</strong></td><td>0.152</td></tr><tr class=""><td>12位</td><td><strong>ジオストラテジー</strong></td><td>0.137</td></tr><tr class=""><td>13位</td><td><strong>カイトヴィント</strong></td><td>0.123</td></tr><tr class=""><td>14位</td><td><strong>エクセルクラウン</strong></td><td>0.122</td></tr><tr class=""><td>15位</td><td><strong>カサビセンス</strong></td><td>0.095</td></tr><tr class=""><td>16位</td><td><strong>ターフクリスタル</strong></td><td>0.061</td></tr></table></div>
         <div id="panel-202605041007" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 東京 7R ｜ 芝2000m</div>
+                <div class="race-title">11月7日(土) 東京 7R ｜ 芝2000m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>ランザワールド</strong></td><td>0.382</td></tr><tr class="rank-2"><td>2位</td><td><strong>キアラメンテ</strong></td><td>0.367</td></tr><tr class="rank-3"><td>3位</td><td><strong>ディヒターリーベ</strong></td><td>0.331</td></tr><tr class=""><td>4位</td><td><strong>ジーティーメティオ</strong></td><td>0.318</td></tr><tr class=""><td>5位</td><td><strong>ミッキーマーメイド</strong></td><td>0.318</td></tr><tr class=""><td>6位</td><td><strong>シェーンシュティア</strong></td><td>0.310</td></tr><tr class=""><td>7位</td><td><strong>カンティーナ</strong></td><td>0.293</td></tr><tr class=""><td>8位</td><td><strong>ハーディジェナー</strong></td><td>0.240</td></tr><tr class=""><td>9位</td><td><strong>オプレントジュエル</strong></td><td>0.200</td></tr><tr class=""><td>10位</td><td><strong>ホールドザデイ</strong></td><td>0.142</td></tr><tr class=""><td>11位</td><td><strong>デイズインザサン</strong></td><td>0.098</td></tr></table></div>
         <div id="panel-202605041008" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 東京 8R ｜ ダート1400m</div>
+                <div class="race-title">11月7日(土) 東京 8R ｜ ダート1400m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>ヘリテージブルーム</strong></td><td>0.396</td></tr><tr class="rank-2"><td>2位</td><td><strong>ダイシンリンク</strong></td><td>0.311</td></tr><tr class="rank-3"><td>3位</td><td><strong>ベルメサイア</strong></td><td>0.301</td></tr><tr class=""><td>4位</td><td><strong>アクアマリーナ</strong></td><td>0.281</td></tr><tr class=""><td>5位</td><td><strong>スーパーバイザー</strong></td><td>0.281</td></tr><tr class=""><td>6位</td><td><strong>プレダトゥール</strong></td><td>0.230</td></tr><tr class=""><td>7位</td><td><strong>レジーナローズ</strong></td><td>0.212</td></tr><tr class=""><td>8位</td><td><strong>ヴィンブルレー</strong></td><td>0.200</td></tr><tr class=""><td>9位</td><td><strong>パープルナイト</strong></td><td>0.199</td></tr><tr class=""><td>10位</td><td><strong>レディサン</strong></td><td>0.187</td></tr><tr class=""><td>11位</td><td><strong>トーホウキザン</strong></td><td>0.186</td></tr><tr class=""><td>12位</td><td><strong>ミライテーラー</strong></td><td>0.132</td></tr><tr class=""><td>13位</td><td><strong>メモリーグラス</strong></td><td>0.083</td></tr></table></div>
         <div id="panel-202605041009" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 東京 9R ｜ ダート1400m</div>
+                <div class="race-title">11月7日(土) 東京 9R ｜ ダート1400m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>スマートポーション</strong></td><td>0.316</td></tr><tr class="rank-2"><td>2位</td><td><strong>スマートブライド</strong></td><td>0.312</td></tr><tr class="rank-3"><td>3位</td><td><strong>イトウカカリチョウ</strong></td><td>0.283</td></tr><tr class=""><td>4位</td><td><strong>ソラティオ</strong></td><td>0.274</td></tr><tr class=""><td>5位</td><td><strong>ユイノエスポワール</strong></td><td>0.271</td></tr><tr class=""><td>6位</td><td><strong>アレックスケー</strong></td><td>0.256</td></tr><tr class=""><td>7位</td><td><strong>マリノエスプレッソ</strong></td><td>0.253</td></tr><tr class=""><td>8位</td><td><strong>ニシノイサリビ</strong></td><td>0.251</td></tr><tr class=""><td>9位</td><td><strong>コパノキラキラ</strong></td><td>0.221</td></tr><tr class=""><td>10位</td><td><strong>ワンスフォーユー</strong></td><td>0.155</td></tr><tr class=""><td>11位</td><td><strong>マイスターシューズ</strong></td><td>0.145</td></tr><tr class=""><td>12位</td><td><strong>グラスラリー</strong></td><td>0.118</td></tr><tr class=""><td>13位</td><td><strong>モミスケ</strong></td><td>0.081</td></tr><tr class=""><td>14位</td><td><strong>クロリス</strong></td><td>0.065</td></tr></table></div>
         <div id="panel-202605041010" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 東京 10R ｜ 芝1600m</div>
+                <div class="race-title">11月7日(土) 東京 10R ｜ 芝1600m</div>
                 <div><span style="color:var(--hot); font-weight:bold;">🔥 勝負</span></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>フジガイフウ</strong></td><td>0.552</td></tr><tr class="rank-2"><td>2位</td><td><strong>シャンソンドール</strong></td><td>0.489</td></tr><tr class="rank-3"><td>3位</td><td><strong>キシダンチョウ</strong></td><td>0.486</td></tr><tr class=""><td>4位</td><td><strong>パワースナッチ</strong></td><td>0.309</td></tr><tr class=""><td>5位</td><td><strong>シャンパンマーク</strong></td><td>0.299</td></tr><tr class=""><td>6位</td><td><strong>ケイケイ</strong></td><td>0.276</td></tr><tr class=""><td>7位</td><td><strong>クールデイトナ</strong></td><td>0.272</td></tr><tr class=""><td>8位</td><td><strong>シャイニースイフト</strong></td><td>0.147</td></tr><tr class=""><td>9位</td><td><strong>ホークマン</strong></td><td>0.091</td></tr><tr class=""><td>10位</td><td><strong>ブライティアダイヤ</strong></td><td>0.080</td></tr></table><div class="buy-box"><div class="buy-title">🎫 推奨買い目: 三連複1頭軸流し (10点)</div><strong>軸馬:</strong> フジガイフウ<br><strong>相手:</strong> シャンソンドール, キシダンチョウ, パワースナッチ, シャンパンマーク, ケイケイ</div></div>
         <div id="panel-202605041011" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 東京 11R ｜ ダート1600m</div>
+                <div class="race-title">11月7日(土) 東京 11R ｜ ダート1600m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>クレーキング</strong></td><td>0.388</td></tr><tr class="rank-2"><td>2位</td><td><strong>アドマイヤデイトナ</strong></td><td>0.296</td></tr><tr class="rank-3"><td>3位</td><td><strong>ロードラビリンス</strong></td><td>0.256</td></tr><tr class=""><td>4位</td><td><strong>ピエマンソン</strong></td><td>0.245</td></tr><tr class=""><td>5位</td><td><strong>ナイトアクアリウム</strong></td><td>0.243</td></tr><tr class=""><td>6位</td><td><strong>リサシテーション</strong></td><td>0.229</td></tr><tr class=""><td>7位</td><td><strong>クールブロン</strong></td><td>0.219</td></tr><tr class=""><td>8位</td><td><strong>シュラザック</strong></td><td>0.195</td></tr><tr class=""><td>9位</td><td><strong>ハワイアンタイム</strong></td><td>0.189</td></tr><tr class=""><td>10位</td><td><strong>イムホテプ</strong></td><td>0.171</td></tr><tr class=""><td>11位</td><td><strong>ジェイパームス</strong></td><td>0.141</td></tr><tr class=""><td>12位</td><td><strong>エスカル</strong></td><td>0.135</td></tr><tr class=""><td>13位</td><td><strong>ショウナンライシン</strong></td><td>0.098</td></tr><tr class=""><td>14位</td><td><strong>ハセドン</strong></td><td>0.098</td></tr><tr class=""><td>15位</td><td><strong>シーズンリッチ</strong></td><td>0.058</td></tr><tr class=""><td>16位</td><td><strong>サフランヒーロー</strong></td><td>0.040</td></tr></table></div>
         <div id="panel-202605041012" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 東京 12R ｜ 芝1800m</div>
+                <div class="race-title">11月7日(土) 東京 12R ｜ 芝1800m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>ラヴェニュー</strong></td><td>0.426</td></tr><tr class="rank-2"><td>2位</td><td><strong>アイムイン</strong></td><td>0.361</td></tr><tr class="rank-3"><td>3位</td><td><strong>オルグジェシダ</strong></td><td>0.335</td></tr><tr class=""><td>4位</td><td><strong>ボニープリンス</strong></td><td>0.303</td></tr><tr class=""><td>5位</td><td><strong>ヴァロアーク</strong></td><td>0.300</td></tr><tr class=""><td>6位</td><td><strong>アメテュストス</strong></td><td>0.245</td></tr><tr class=""><td>7位</td><td><strong>セーヌデローヴ</strong></td><td>0.192</td></tr><tr class=""><td>8位</td><td><strong>ダイユウアレグロ</strong></td><td>0.189</td></tr><tr class=""><td>9位</td><td><strong>フリーガー</strong></td><td>0.188</td></tr><tr class=""><td>10位</td><td><strong>ラッキーストーン</strong></td><td>0.184</td></tr><tr class=""><td>11位</td><td><strong>マイネルグレート</strong></td><td>0.182</td></tr><tr class=""><td>12位</td><td><strong>フィクセルリリア</strong></td><td>0.092</td></tr></table></div>
         <div id="panel-202605041101" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 東京 1R ｜ 芝1400m</div>
+                <div class="race-title">11月8日(日) 東京 1R ｜ 芝1400m</div>
                 <div><span style="color:var(--hot); font-weight:bold;">🔥 勝負</span></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>ミエルモーサ</strong></td><td>0.485</td></tr><tr class="rank-2"><td>2位</td><td><strong>インサイドエッジ</strong></td><td>0.413</td></tr><tr class="rank-3"><td>3位</td><td><strong>ローズファミリー</strong></td><td>0.304</td></tr><tr class=""><td>4位</td><td><strong>シュネーバレン</strong></td><td>0.299</td></tr><tr class=""><td>5位</td><td><strong>ウインリスノアール</strong></td><td>0.207</td></tr><tr class=""><td>6位</td><td><strong>レミニシング</strong></td><td>0.174</td></tr><tr class=""><td>7位</td><td><strong>コスモオルト</strong></td><td>0.159</td></tr><tr class=""><td>8位</td><td><strong>テリオスブギ</strong></td><td>0.158</td></tr><tr class=""><td>9位</td><td><strong>ユリア</strong></td><td>0.140</td></tr><tr class=""><td>10位</td><td><strong>アニーリング</strong></td><td>0.132</td></tr><tr class=""><td>11位</td><td><strong>チャジャッタ</strong></td><td>0.130</td></tr><tr class=""><td>12位</td><td><strong>ナナレイ</strong></td><td>0.113</td></tr><tr class=""><td>13位</td><td><strong>ココニイルヨ</strong></td><td>0.097</td></tr><tr class=""><td>14位</td><td><strong>オオルリ</strong></td><td>0.094</td></tr><tr class=""><td>15位</td><td><strong>ステラガーネット</strong></td><td>0.094</td></tr></table><div class="buy-box"><div class="buy-title">🎫 推奨買い目: 三連複1頭軸流し (10点)</div><strong>軸馬:</strong> ミエルモーサ<br><strong>相手:</strong> インサイドエッジ, ローズファミリー, シュネーバレン, ウインリスノアール, レミニシング</div></div>
         <div id="panel-202605041102" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 東京 2R ｜ ダート1400m</div>
+                <div class="race-title">11月8日(日) 東京 2R ｜ ダート1400m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>ナムラアラバイ</strong></td><td>0.381</td></tr><tr class="rank-2"><td>2位</td><td><strong>アイデアルカット</strong></td><td>0.255</td></tr><tr class="rank-3"><td>3位</td><td><strong>クールランナー</strong></td><td>0.249</td></tr><tr class=""><td>4位</td><td><strong>カンタベリーアップ</strong></td><td>0.225</td></tr><tr class=""><td>5位</td><td><strong>タワーレイヴン</strong></td><td>0.224</td></tr><tr class=""><td>6位</td><td><strong>タマモキャスケット</strong></td><td>0.222</td></tr><tr class=""><td>7位</td><td><strong>ホウフクゼットウ</strong></td><td>0.192</td></tr><tr class=""><td>8位</td><td><strong>カリメラ</strong></td><td>0.191</td></tr><tr class=""><td>9位</td><td><strong>ツジベン</strong></td><td>0.187</td></tr><tr class=""><td>10位</td><td><strong>スピカテソーロ</strong></td><td>0.178</td></tr><tr class=""><td>11位</td><td><strong>サザンマキシム</strong></td><td>0.178</td></tr><tr class=""><td>12位</td><td><strong>パープルタウン</strong></td><td>0.154</td></tr><tr class=""><td>13位</td><td><strong>イチゴワタアメ</strong></td><td>0.140</td></tr><tr class=""><td>14位</td><td><strong>キミヘノメロディー</strong></td><td>0.107</td></tr><tr class=""><td>15位</td><td><strong>ライヴバーボン</strong></td><td>0.062</td></tr><tr class=""><td>16位</td><td><strong>アブリコース</strong></td><td>0.056</td></tr></table></div>
         <div id="panel-202605041103" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 東京 3R ｜ 芝1800m</div>
+                <div class="race-title">11月8日(日) 東京 3R ｜ 芝1800m</div>
                 <div><span style="color:var(--hot); font-weight:bold;">🔥 勝負</span></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>ハートノート</strong></td><td>0.616</td></tr><tr class="rank-2"><td>2位</td><td><strong>マイネルリシャール</strong></td><td>0.481</td></tr><tr class="rank-3"><td>3位</td><td><strong>コスモバルムンク</strong></td><td>0.421</td></tr><tr class=""><td>4位</td><td><strong>ラニアケア</strong></td><td>0.394</td></tr><tr class=""><td>5位</td><td><strong>ケイツーラリ</strong></td><td>0.361</td></tr><tr class=""><td>6位</td><td><strong>クラウンフラッグ</strong></td><td>0.277</td></tr><tr class=""><td>7位</td><td><strong>アラヤシキ</strong></td><td>0.245</td></tr><tr class=""><td>8位</td><td><strong>マルガリート</strong></td><td>0.143</td></tr><tr class=""><td>9位</td><td><strong>マリノフスキー</strong></td><td>0.062</td></tr></table><div class="buy-box"><div class="buy-title">🎫 推奨買い目: 三連複1頭軸流し (10点)</div><strong>軸馬:</strong> ハートノート<br><strong>相手:</strong> マイネルリシャール, コスモバルムンク, ラニアケア, ケイツーラリ, クラウンフラッグ</div></div>
         <div id="panel-202605041104" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 東京 4R ｜ 芝1600m</div>
+                <div class="race-title">11月8日(日) 東京 4R ｜ 芝1600m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>コールセレスト</strong></td><td>0.301</td></tr><tr class="rank-2"><td>2位</td><td><strong>レッドカロン</strong></td><td>0.290</td></tr><tr class="rank-3"><td>3位</td><td><strong>キョウエイタウン</strong></td><td>0.277</td></tr><tr class=""><td>4位</td><td><strong>ネオマイスター</strong></td><td>0.227</td></tr><tr class=""><td>5位</td><td><strong>ブラスオルケスター</strong></td><td>0.221</td></tr><tr class=""><td>6位</td><td><strong>フォルミナンテ</strong></td><td>0.212</td></tr><tr class=""><td>7位</td><td><strong>イデアブチャラティ</strong></td><td>0.197</td></tr><tr class=""><td>8位</td><td><strong>エンケリ</strong></td><td>0.195</td></tr><tr class=""><td>9位</td><td><strong>ニシノカサブランカ</strong></td><td>0.191</td></tr><tr class=""><td>10位</td><td><strong>ファイナルチューブ</strong></td><td>0.191</td></tr><tr class=""><td>11位</td><td><strong>アドマイヤキングス</strong></td><td>0.187</td></tr><tr class=""><td>12位</td><td><strong>クライムザツリー</strong></td><td>0.185</td></tr><tr class=""><td>13位</td><td><strong>サウザンボム</strong></td><td>0.175</td></tr><tr class=""><td>14位</td><td><strong>サルサベガ</strong></td><td>0.149</td></tr></table></div>
         <div id="panel-202605041105" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 東京 5R ｜ 芝2000m</div>
+                <div class="race-title">11月8日(日) 東京 5R ｜ 芝2000m</div>
                 <div><span style="color:var(--hot); font-weight:bold;">🔥 勝負</span></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>アイアムスグレモノ</strong></td><td>0.494</td></tr><tr class="rank-2"><td>2位</td><td><strong>ベルウッドイタル</strong></td><td>0.471</td></tr><tr class="rank-3"><td>3位</td><td><strong>パルパデオ</strong></td><td>0.470</td></tr><tr class=""><td>4位</td><td><strong>ロイヤルヴェイズ</strong></td><td>0.380</td></tr><tr class=""><td>5位</td><td><strong>アドマイヤミラ</strong></td><td>0.350</td></tr><tr class=""><td>6位</td><td><strong>オルトゥス</strong></td><td>0.306</td></tr><tr class=""><td>7位</td><td><strong>ショウナンサザン</strong></td><td>0.289</td></tr><tr class=""><td>8位</td><td><strong>キャナルタウン</strong></td><td>0.239</td></tr></table><div class="buy-box"><div class="buy-title">🎫 推奨買い目: 三連複1頭軸流し (10点)</div><strong>軸馬:</strong> アイアムスグレモノ<br><strong>相手:</strong> ベルウッドイタル, パルパデオ, ロイヤルヴェイズ, アドマイヤミラ, オルトゥス</div></div>
         <div id="panel-202605041106" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 東京 6R ｜ ダート1400m</div>
+                <div class="race-title">11月8日(日) 東京 6R ｜ ダート1400m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>ヘルヴェティオス</strong></td><td>0.329</td></tr><tr class="rank-2"><td>2位</td><td><strong>トワイライトビュー</strong></td><td>0.289</td></tr><tr class="rank-3"><td>3位</td><td><strong>イヌボウノアサヒ</strong></td><td>0.277</td></tr><tr class=""><td>4位</td><td><strong>アンプイットアップ</strong></td><td>0.275</td></tr><tr class=""><td>5位</td><td><strong>ケイツープラ</strong></td><td>0.271</td></tr><tr class=""><td>6位</td><td><strong>ガラク</strong></td><td>0.246</td></tr><tr class=""><td>7位</td><td><strong>スーパーガール</strong></td><td>0.231</td></tr><tr class=""><td>8位</td><td><strong>コウユーニポポニコ</strong></td><td>0.207</td></tr><tr class=""><td>9位</td><td><strong>スピニンググローブ</strong></td><td>0.191</td></tr><tr class=""><td>10位</td><td><strong>ゴーゴーパンチ</strong></td><td>0.188</td></tr><tr class=""><td>11位</td><td><strong>ラエトゥス</strong></td><td>0.154</td></tr><tr class=""><td>12位</td><td><strong>エスシーレイジュ</strong></td><td>0.104</td></tr><tr class=""><td>13位</td><td><strong>ゴールドシーン</strong></td><td>0.085</td></tr><tr class=""><td>14位</td><td><strong>トキメキジニア</strong></td><td>0.084</td></tr><tr class=""><td>15位</td><td><strong>ソリッドベーシス</strong></td><td>0.067</td></tr></table></div>
         <div id="panel-202605041107" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 東京 7R ｜ ダート1600m</div>
+                <div class="race-title">11月8日(日) 東京 7R ｜ ダート1600m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>エドワードバローズ</strong></td><td>0.417</td></tr><tr class="rank-2"><td>2位</td><td><strong>アンシュウマト</strong></td><td>0.337</td></tr><tr class="rank-3"><td>3位</td><td><strong>ペイトー</strong></td><td>0.320</td></tr><tr class=""><td>4位</td><td><strong>シンギュラリティ</strong></td><td>0.237</td></tr><tr class=""><td>5位</td><td><strong>ライフイズ</strong></td><td>0.226</td></tr><tr class=""><td>6位</td><td><strong>カルネヴァーレ</strong></td><td>0.212</td></tr><tr class=""><td>7位</td><td><strong>タイセツナヒ</strong></td><td>0.202</td></tr><tr class=""><td>8位</td><td><strong>レイズトワイライト</strong></td><td>0.189</td></tr><tr class=""><td>9位</td><td><strong>コッレヴェッキオ</strong></td><td>0.174</td></tr><tr class=""><td>10位</td><td><strong>ベイビールビオ</strong></td><td>0.137</td></tr><tr class=""><td>11位</td><td><strong>コスモシェルベット</strong></td><td>0.131</td></tr><tr class=""><td>12位</td><td><strong>インテルメディオ</strong></td><td>0.115</td></tr><tr class=""><td>13位</td><td><strong>アルプスオジョー</strong></td><td>0.106</td></tr><tr class=""><td>14位</td><td><strong>キングクレオール</strong></td><td>0.102</td></tr><tr class=""><td>15位</td><td><strong>ポタリング</strong></td><td>0.095</td></tr></table></div>
         <div id="panel-202605041108" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 東京 8R ｜ 芝2400m</div>
+                <div class="race-title">11月8日(日) 東京 8R ｜ 芝2400m</div>
                 <div><span style="color:var(--hot); font-weight:bold;">🔥 勝負</span></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>ミッキーファルコン</strong></td><td>0.536</td></tr><tr class="rank-2"><td>2位</td><td><strong>イブキ</strong></td><td>0.536</td></tr><tr class="rank-3"><td>3位</td><td><strong>ピックデムッシュ</strong></td><td>0.488</td></tr><tr class=""><td>4位</td><td><strong>プレイザリード</strong></td><td>0.463</td></tr><tr class=""><td>5位</td><td><strong>ノチェセラーダ</strong></td><td>0.451</td></tr><tr class=""><td>6位</td><td><strong>ステラスペース</strong></td><td>0.340</td></tr><tr class=""><td>7位</td><td><strong>ワンモアスマイル</strong></td><td>0.133</td></tr><tr class=""><td>8位</td><td><strong>サイモンルモンド</strong></td><td>0.052</td></tr></table><div class="buy-box"><div class="buy-title">🎫 推奨買い目: 三連複1頭軸流し (10点)</div><strong>軸馬:</strong> ミッキーファルコン<br><strong>相手:</strong> イブキ, ピックデムッシュ, プレイザリード, ノチェセラーダ, ステラスペース</div></div>
         <div id="panel-202605041109" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 東京 9R ｜ 芝1600m</div>
+                <div class="race-title">11月8日(日) 東京 9R ｜ 芝1600m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>ウフドゥウフ</strong></td><td>0.334</td></tr><tr class="rank-2"><td>2位</td><td><strong>コスモアンソロジー</strong></td><td>0.283</td></tr><tr class="rank-3"><td>3位</td><td><strong>コムユンプリュム</strong></td><td>0.251</td></tr><tr class=""><td>4位</td><td><strong>テラメリタ</strong></td><td>0.249</td></tr><tr class=""><td>5位</td><td><strong>エルハーベン</strong></td><td>0.246</td></tr><tr class=""><td>6位</td><td><strong>マテンロウブラボー</strong></td><td>0.242</td></tr><tr class=""><td>7位</td><td><strong>マクリール</strong></td><td>0.224</td></tr><tr class=""><td>8位</td><td><strong>アルデトップガン</strong></td><td>0.219</td></tr><tr class=""><td>9位</td><td><strong>ミッキーソルジャー</strong></td><td>0.206</td></tr><tr class=""><td>10位</td><td><strong>エルマーゴ</strong></td><td>0.183</td></tr><tr class=""><td>11位</td><td><strong>ショウナンアレクサ</strong></td><td>0.172</td></tr><tr class=""><td>12位</td><td><strong>サトミノキラリ</strong></td><td>0.164</td></tr><tr class=""><td>13位</td><td><strong>ガリレア</strong></td><td>0.164</td></tr><tr class=""><td>14位</td><td><strong>ブランデーロック</strong></td><td>0.063</td></tr></table></div>
         <div id="panel-202605041110" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 東京 10R ｜ ダート1300m</div>
+                <div class="race-title">11月8日(日) 東京 10R ｜ ダート1300m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>プルメリアリノ</strong></td><td>0.413</td></tr><tr class="rank-2"><td>2位</td><td><strong>タマモティーカップ</strong></td><td>0.342</td></tr><tr class="rank-3"><td>3位</td><td><strong>イノセントキャット</strong></td><td>0.289</td></tr><tr class=""><td>4位</td><td><strong>クインズデネブ</strong></td><td>0.265</td></tr><tr class=""><td>5位</td><td><strong>フェンダー</strong></td><td>0.258</td></tr><tr class=""><td>6位</td><td><strong>レイズカイザー</strong></td><td>0.230</td></tr><tr class=""><td>7位</td><td><strong>トーアジョウトウ</strong></td><td>0.172</td></tr><tr class=""><td>8位</td><td><strong>レッドラパルマ</strong></td><td>0.169</td></tr><tr class=""><td>9位</td><td><strong>オカメノコイ</strong></td><td>0.168</td></tr><tr class=""><td>10位</td><td><strong>ナッカーフェイス</strong></td><td>0.152</td></tr><tr class=""><td>11位</td><td><strong>スプランドゥール</strong></td><td>0.139</td></tr><tr class=""><td>12位</td><td><strong>メイショウツヨキ</strong></td><td>0.119</td></tr><tr class=""><td>13位</td><td><strong>ウィステリアリヴァ</strong></td><td>0.100</td></tr><tr class=""><td>14位</td><td><strong>コパノヴィンセント</strong></td><td>0.076</td></tr><tr class=""><td>15位</td><td><strong>アイアムユウシュン</strong></td><td>0.069</td></tr><tr class=""><td>16位</td><td><strong>アイファースキャン</strong></td><td>0.039</td></tr></table></div>
         <div id="panel-202605041111" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 東京 11R ｜ 芝2000m</div>
+                <div class="race-title">11月8日(日) 東京 11R ｜ 芝2000m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>ネブラディスク</strong></td><td>0.308</td></tr><tr class="rank-2"><td>2位</td><td><strong>クロワデュノール</strong></td><td>0.269</td></tr><tr class="rank-3"><td>3位</td><td><strong>シェイクユアハート</strong></td><td>0.243</td></tr><tr class=""><td>4位</td><td><strong>マスカレードボール</strong></td><td>0.239</td></tr><tr class=""><td>5位</td><td><strong>ダノンデサイル</strong></td><td>0.235</td></tr><tr class=""><td>6位</td><td><strong>ジョバンニ</strong></td><td>0.225</td></tr><tr class=""><td>7位</td><td><strong>サクラファレル</strong></td><td>0.219</td></tr><tr class=""><td>8位</td><td><strong>リアライズシリウス</strong></td><td>0.182</td></tr><tr class=""><td>9位</td><td><strong>レガレイラ</strong></td><td>0.172</td></tr><tr class=""><td>10位</td><td><strong>レディネス</strong></td><td>0.158</td></tr><tr class=""><td>11位</td><td><strong>タガノデュード</strong></td><td>0.144</td></tr><tr class=""><td>12位</td><td><strong>ホウオウビスケッツ</strong></td><td>0.126</td></tr><tr class=""><td>13位</td><td><strong>ジュンブロッサム</strong></td><td>0.122</td></tr><tr class=""><td>14位</td><td><strong>セイウンハーデス</strong></td><td>0.116</td></tr><tr class=""><td>15位</td><td><strong>コスモキュランダ</strong></td><td>0.098</td></tr><tr class=""><td>16位</td><td><strong>エルトンバローズ</strong></td><td>0.093</td></tr><tr class=""><td>17位</td><td><strong>シャンパンカラー</strong></td><td>0.052</td></tr></table></div>
         <div id="panel-202605041112" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 東京 12R ｜ ダート1600m</div>
+                <div class="race-title">11月8日(日) 東京 12R ｜ ダート1600m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>サマーマッドネス</strong></td><td>0.328</td></tr><tr class="rank-2"><td>2位</td><td><strong>スマートスピア</strong></td><td>0.321</td></tr><tr class="rank-3"><td>3位</td><td><strong>ファンシーズ</strong></td><td>0.288</td></tr><tr class=""><td>4位</td><td><strong>キングツェッペリン</strong></td><td>0.282</td></tr><tr class=""><td>5位</td><td><strong>フェスタリア</strong></td><td>0.269</td></tr><tr class=""><td>6位</td><td><strong>タマモカンパネラ</strong></td><td>0.248</td></tr><tr class=""><td>7位</td><td><strong>シャンハイナイト</strong></td><td>0.192</td></tr><tr class=""><td>8位</td><td><strong>レディゴディヴァ</strong></td><td>0.188</td></tr><tr class=""><td>9位</td><td><strong>キョウエイスレーヴ</strong></td><td>0.163</td></tr><tr class=""><td>10位</td><td><strong>セイントエルモズ</strong></td><td>0.162</td></tr><tr class=""><td>11位</td><td><strong>ドントゥザムーン</strong></td><td>0.162</td></tr><tr class=""><td>12位</td><td><strong>アイファーバトル</strong></td><td>0.141</td></tr><tr class=""><td>13位</td><td><strong>スルーザナイト</strong></td><td>0.130</td></tr><tr class=""><td>14位</td><td><strong>レーヴドレフォン</strong></td><td>0.126</td></tr></table></div>
         <div id="panel-202608041001" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 京都 1R ｜ ダート1400m</div>
+                <div class="race-title">11月7日(土) 京都 1R ｜ ダート1400m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>マルモリマイベスト</strong></td><td>0.442</td></tr><tr class="rank-2"><td>2位</td><td><strong>ダイユウエゾフジ</strong></td><td>0.302</td></tr><tr class="rank-3"><td>3位</td><td><strong>アセンシオン</strong></td><td>0.249</td></tr><tr class=""><td>4位</td><td><strong>シムサラビン</strong></td><td>0.215</td></tr><tr class=""><td>5位</td><td><strong>スリーオブスペイズ</strong></td><td>0.213</td></tr><tr class=""><td>6位</td><td><strong>エリーマイラヴ</strong></td><td>0.204</td></tr><tr class=""><td>7位</td><td><strong>ピコジャック</strong></td><td>0.192</td></tr><tr class=""><td>8位</td><td><strong>エアロクリスタ</strong></td><td>0.184</td></tr><tr class=""><td>9位</td><td><strong>ヴァルダンセ</strong></td><td>0.182</td></tr><tr class=""><td>10位</td><td><strong>ベラジオセブン</strong></td><td>0.162</td></tr><tr class=""><td>11位</td><td><strong>ピエナマーズ</strong></td><td>0.160</td></tr><tr class=""><td>12位</td><td><strong>ゴールドアーク</strong></td><td>0.152</td></tr><tr class=""><td>13位</td><td><strong>ジャスコヒラリアス</strong></td><td>0.108</td></tr><tr class=""><td>14位</td><td><strong>ランズエンド</strong></td><td>0.106</td></tr><tr class=""><td>15位</td><td><strong>ヤマトデュノール</strong></td><td>0.086</td></tr><tr class=""><td>16位</td><td><strong>ウィナーズクロノ</strong></td><td>0.043</td></tr></table></div>
         <div id="panel-202608041002" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 京都 2R ｜ 芝1600m</div>
+                <div class="race-title">11月7日(土) 京都 2R ｜ 芝1600m</div>
                 <div><span style="color:var(--hot); font-weight:bold;">🔥 勝負</span></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>コンセルノ</strong></td><td>0.623</td></tr><tr class="rank-2"><td>2位</td><td><strong>ラガッタレアーレ</strong></td><td>0.605</td></tr><tr class="rank-3"><td>3位</td><td><strong>ジューンルル</strong></td><td>0.299</td></tr><tr class=""><td>4位</td><td><strong>フクノブルースカイ</strong></td><td>0.292</td></tr><tr class=""><td>5位</td><td><strong>サウンドアミューズ</strong></td><td>0.279</td></tr><tr class=""><td>6位</td><td><strong>ダディーズレガリア</strong></td><td>0.253</td></tr><tr class=""><td>7位</td><td><strong>トゥルーライフ</strong></td><td>0.235</td></tr><tr class=""><td>8位</td><td><strong>ヒノトリ</strong></td><td>0.181</td></tr><tr class=""><td>9位</td><td><strong>ナムラサフラン</strong></td><td>0.125</td></tr><tr class=""><td>10位</td><td><strong>ルガルデ</strong></td><td>0.108</td></tr></table><div class="buy-box"><div class="buy-title">🎫 推奨買い目: 三連複1頭軸流し (10点)</div><strong>軸馬:</strong> コンセルノ<br><strong>相手:</strong> ラガッタレアーレ, ジューンルル, フクノブルースカイ, サウンドアミューズ, ダディーズレガリア</div></div>
         <div id="panel-202608041003" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 京都 3R ｜ 芝1800m</div>
+                <div class="race-title">11月7日(土) 京都 3R ｜ 芝1800m</div>
                 <div><span style="color:var(--hot); font-weight:bold;">🔥 勝負</span></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>アイオリスパルス</strong></td><td>0.571</td></tr><tr class="rank-2"><td>2位</td><td><strong>ポカポカヨウキ</strong></td><td>0.503</td></tr><tr class="rank-3"><td>3位</td><td><strong>シルクウォード</strong></td><td>0.453</td></tr><tr class=""><td>4位</td><td><strong>ディープリメンバー</strong></td><td>0.330</td></tr><tr class=""><td>5位</td><td><strong>メメヤンチャヒメ</strong></td><td>0.308</td></tr><tr class=""><td>6位</td><td><strong>ウィリーウィリー</strong></td><td>0.299</td></tr><tr class=""><td>7位</td><td><strong>ブラックミューズ</strong></td><td>0.283</td></tr><tr class=""><td>8位</td><td><strong>サントボーム</strong></td><td>0.252</td></tr></table><div class="buy-box"><div class="buy-title">🎫 推奨買い目: 三連複1頭軸流し (10点)</div><strong>軸馬:</strong> アイオリスパルス<br><strong>相手:</strong> ポカポカヨウキ, シルクウォード, ディープリメンバー, メメヤンチャヒメ, ウィリーウィリー</div></div>
         <div id="panel-202608041005" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 京都 5R ｜ 芝2000m</div>
+                <div class="race-title">11月7日(土) 京都 5R ｜ 芝2000m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>フェイムシーカー</strong></td><td>0.318</td></tr><tr class="rank-2"><td>2位</td><td><strong>ソトッキー</strong></td><td>0.308</td></tr><tr class="rank-3"><td>3位</td><td><strong>オーバーアゲイン</strong></td><td>0.303</td></tr><tr class=""><td>4位</td><td><strong>フォコンノワール</strong></td><td>0.276</td></tr><tr class=""><td>5位</td><td><strong>デルマクズリュウ</strong></td><td>0.238</td></tr><tr class=""><td>6位</td><td><strong>アンドロニクス</strong></td><td>0.234</td></tr><tr class=""><td>7位</td><td><strong>アントレピード</strong></td><td>0.224</td></tr><tr class=""><td>8位</td><td><strong>メイショウイロドリ</strong></td><td>0.213</td></tr><tr class=""><td>9位</td><td><strong>ヒロノリホープ</strong></td><td>0.199</td></tr><tr class=""><td>10位</td><td><strong>ホウオウトリリオン</strong></td><td>0.185</td></tr><tr class=""><td>11位</td><td><strong>マンハッタンモーン</strong></td><td>0.180</td></tr><tr class=""><td>12位</td><td><strong>トゥーリ</strong></td><td>0.167</td></tr><tr class=""><td>13位</td><td><strong>フラワーマーチ</strong></td><td>0.155</td></tr></table></div>
         <div id="panel-202608041006" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 京都 6R ｜ ダート1400m</div>
+                <div class="race-title">11月7日(土) 京都 6R ｜ ダート1400m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>サイモンレコルト</strong></td><td>0.249</td></tr><tr class="rank-2"><td>2位</td><td><strong>ホーフアイゼン</strong></td><td>0.232</td></tr><tr class="rank-3"><td>3位</td><td><strong>トップエンドパワー</strong></td><td>0.224</td></tr><tr class=""><td>4位</td><td><strong>ルシエルノーブル</strong></td><td>0.220</td></tr><tr class=""><td>5位</td><td><strong>ジーティーイレブン</strong></td><td>0.212</td></tr><tr class=""><td>6位</td><td><strong>スターシーカー</strong></td><td>0.212</td></tr><tr class=""><td>7位</td><td><strong>クリコリンダ</strong></td><td>0.201</td></tr><tr class=""><td>8位</td><td><strong>モアザンヴォルト</strong></td><td>0.195</td></tr><tr class=""><td>9位</td><td><strong>キングゴールド</strong></td><td>0.185</td></tr><tr class=""><td>10位</td><td><strong>レッドガレオン</strong></td><td>0.169</td></tr><tr class=""><td>11位</td><td><strong>ナムラウルフ</strong></td><td>0.167</td></tr><tr class=""><td>12位</td><td><strong>クローネンリーベ</strong></td><td>0.167</td></tr><tr class=""><td>13位</td><td><strong>サマーレディ</strong></td><td>0.156</td></tr><tr class=""><td>14位</td><td><strong>ビップカレッジ</strong></td><td>0.150</td></tr><tr class=""><td>15位</td><td><strong>ドリームハロウ</strong></td><td>0.135</td></tr><tr class=""><td>16位</td><td><strong>マスターピース</strong></td><td>0.125</td></tr></table></div>
         <div id="panel-202608041007" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 京都 7R ｜ ダート1800m</div>
+                <div class="race-title">11月7日(土) 京都 7R ｜ ダート1800m</div>
                 <div><span style="color:var(--hot); font-weight:bold;">🔥 勝負</span></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>スカイストライプス</strong></td><td>0.484</td></tr><tr class="rank-2"><td>2位</td><td><strong>ジーティーアメリカ</strong></td><td>0.329</td></tr><tr class="rank-3"><td>3位</td><td><strong>バリオス</strong></td><td>0.297</td></tr><tr class=""><td>4位</td><td><strong>ララディアーブル</strong></td><td>0.277</td></tr><tr class=""><td>5位</td><td><strong>ブラックドレス</strong></td><td>0.276</td></tr><tr class=""><td>6位</td><td><strong>スナークシャラク</strong></td><td>0.269</td></tr><tr class=""><td>7位</td><td><strong>ゴールデンダガー</strong></td><td>0.254</td></tr><tr class=""><td>8位</td><td><strong>ハイロード</strong></td><td>0.250</td></tr><tr class=""><td>9位</td><td><strong>クラテロス</strong></td><td>0.244</td></tr><tr class=""><td>10位</td><td><strong>テーオーアンジェラ</strong></td><td>0.141</td></tr><tr class=""><td>11位</td><td><strong>マリノエステーラ</strong></td><td>0.107</td></tr><tr class=""><td>12位</td><td><strong>ハノハノ</strong></td><td>0.072</td></tr></table><div class="buy-box"><div class="buy-title">🎫 推奨買い目: 三連複1頭軸流し (10点)</div><strong>軸馬:</strong> スカイストライプス<br><strong>相手:</strong> ジーティーアメリカ, バリオス, ララディアーブル, ブラックドレス, スナークシャラク</div></div>
         <div id="panel-202608041008" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 京都 8R ｜ ダート1200m</div>
+                <div class="race-title">11月7日(土) 京都 8R ｜ ダート1200m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>ダノンモンテローザ</strong></td><td>0.404</td></tr><tr class="rank-2"><td>2位</td><td><strong>ビッグドリーム</strong></td><td>0.319</td></tr><tr class="rank-3"><td>3位</td><td><strong>マメタンク</strong></td><td>0.291</td></tr><tr class=""><td>4位</td><td><strong>ライトオブヌカタ</strong></td><td>0.278</td></tr><tr class=""><td>5位</td><td><strong>ルイステソーロ</strong></td><td>0.264</td></tr><tr class=""><td>6位</td><td><strong>モンサンゴールデン</strong></td><td>0.249</td></tr><tr class=""><td>7位</td><td><strong>バッハアルプゼー</strong></td><td>0.246</td></tr><tr class=""><td>8位</td><td><strong>ジーベック</strong></td><td>0.233</td></tr><tr class=""><td>9位</td><td><strong>ワイノナオミ</strong></td><td>0.182</td></tr><tr class=""><td>10位</td><td><strong>ズバットマサムネ</strong></td><td>0.133</td></tr><tr class=""><td>11位</td><td><strong>ダズリングダンス</strong></td><td>0.127</td></tr><tr class=""><td>12位</td><td><strong>ミサビスケッツ</strong></td><td>0.122</td></tr><tr class=""><td>13位</td><td><strong>ストラテージュ</strong></td><td>0.101</td></tr><tr class=""><td>14位</td><td><strong>バイファーザベスト</strong></td><td>0.049</td></tr></table></div>
         <div id="panel-202608041009" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 京都 9R ｜ 芝2000m</div>
+                <div class="race-title">11月7日(土) 京都 9R ｜ 芝2000m</div>
                 <div><span style="color:var(--hot); font-weight:bold;">🔥 勝負</span></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>ホウオウタイタン</strong></td><td>0.518</td></tr><tr class="rank-2"><td>2位</td><td><strong>オメガインペリアル</strong></td><td>0.409</td></tr><tr class="rank-3"><td>3位</td><td><strong>スターリングアップ</strong></td><td>0.373</td></tr><tr class=""><td>4位</td><td><strong>キタサンハナビラ</strong></td><td>0.328</td></tr><tr class=""><td>5位</td><td><strong>スカイスプレンダー</strong></td><td>0.294</td></tr><tr class=""><td>6位</td><td><strong>カムアップローゼス</strong></td><td>0.286</td></tr><tr class=""><td>7位</td><td><strong>ダノンカゼルタ</strong></td><td>0.281</td></tr><tr class=""><td>8位</td><td><strong>ダイヤモンドハンズ</strong></td><td>0.280</td></tr><tr class=""><td>9位</td><td><strong>ミカエルパシャ</strong></td><td>0.120</td></tr><tr class=""><td>10位</td><td><strong>ビッグデイメイク</strong></td><td>0.111</td></tr></table><div class="buy-box"><div class="buy-title">🎫 推奨買い目: 三連複1頭軸流し (10点)</div><strong>軸馬:</strong> ホウオウタイタン<br><strong>相手:</strong> オメガインペリアル, スターリングアップ, キタサンハナビラ, スカイスプレンダー, カムアップローゼス</div></div>
         <div id="panel-202608041010" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 京都 10R ｜ ダート1900m</div>
+                <div class="race-title">11月7日(土) 京都 10R ｜ ダート1900m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>システマソラー</strong></td><td>0.409</td></tr><tr class="rank-2"><td>2位</td><td><strong>ブレトワルダ</strong></td><td>0.283</td></tr><tr class="rank-3"><td>3位</td><td><strong>マテンロウブレイブ</strong></td><td>0.272</td></tr><tr class=""><td>4位</td><td><strong>ソルチェリア</strong></td><td>0.272</td></tr><tr class=""><td>5位</td><td><strong>ジョータルマエ</strong></td><td>0.267</td></tr><tr class=""><td>6位</td><td><strong>ペンナヴェローチェ</strong></td><td>0.261</td></tr><tr class=""><td>7位</td><td><strong>タイセイアディクト</strong></td><td>0.240</td></tr><tr class=""><td>8位</td><td><strong>アークドール</strong></td><td>0.197</td></tr><tr class=""><td>9位</td><td><strong>オリーブグリーン</strong></td><td>0.165</td></tr><tr class=""><td>10位</td><td><strong>セブンマジシャン</strong></td><td>0.163</td></tr><tr class=""><td>11位</td><td><strong>ショウサンジョージ</strong></td><td>0.148</td></tr><tr class=""><td>12位</td><td><strong>リューデスハイム</strong></td><td>0.120</td></tr><tr class=""><td>13位</td><td><strong>サイモンブーケ</strong></td><td>0.100</td></tr><tr class=""><td>14位</td><td><strong>ルクスビッグスター</strong></td><td>0.040</td></tr><tr class=""><td>15位</td><td><strong>キュールエフウジン</strong></td><td>0.038</td></tr><tr class=""><td>16位</td><td><strong>メイショウコガシラ</strong></td><td>0.023</td></tr></table></div>
         <div id="panel-202608041011" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 京都 11R ｜ 芝1400m</div>
+                <div class="race-title">11月7日(土) 京都 11R ｜ 芝1400m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>イモージェン</strong></td><td>0.398</td></tr><tr class="rank-2"><td>2位</td><td><strong>ベニバナ</strong></td><td>0.362</td></tr><tr class="rank-3"><td>3位</td><td><strong>ビスケットサンド</strong></td><td>0.342</td></tr><tr class=""><td>4位</td><td><strong>フェリチタ</strong></td><td>0.329</td></tr><tr class=""><td>5位</td><td><strong>ニクスルーナ</strong></td><td>0.313</td></tr><tr class=""><td>6位</td><td><strong>シャンデヴァーグ</strong></td><td>0.289</td></tr><tr class=""><td>7位</td><td><strong>ブライトスクリプト</strong></td><td>0.260</td></tr><tr class=""><td>8位</td><td><strong>バタフライ</strong></td><td>0.198</td></tr><tr class=""><td>9位</td><td><strong>レニュアージュ</strong></td><td>0.189</td></tr><tr class=""><td>10位</td><td><strong>ツキミ</strong></td><td>0.176</td></tr><tr class=""><td>11位</td><td><strong>セイウンマイラヴ</strong></td><td>0.144</td></tr></table></div>
         <div id="panel-202608041012" class="panel">
             <div class="race-header">
-                <div class="race-title">10月31日(土) 京都 12R ｜ 芝1600m</div>
+                <div class="race-title">11月7日(土) 京都 12R ｜ 芝1600m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>メイショウトウコウ</strong></td><td>0.280</td></tr><tr class="rank-2"><td>2位</td><td><strong>マテンロウネイビー</strong></td><td>0.277</td></tr><tr class="rank-3"><td>3位</td><td><strong>パスコード</strong></td><td>0.270</td></tr><tr class=""><td>4位</td><td><strong>フォルナックス</strong></td><td>0.258</td></tr><tr class=""><td>5位</td><td><strong>ラヴリーティアラ</strong></td><td>0.223</td></tr><tr class=""><td>6位</td><td><strong>サトノセプター</strong></td><td>0.210</td></tr><tr class=""><td>7位</td><td><strong>スマートティアナ</strong></td><td>0.206</td></tr><tr class=""><td>8位</td><td><strong>ラパンドール</strong></td><td>0.188</td></tr><tr class=""><td>9位</td><td><strong>テイエムスティール</strong></td><td>0.168</td></tr><tr class=""><td>10位</td><td><strong>エイズルブルーム</strong></td><td>0.165</td></tr><tr class=""><td>11位</td><td><strong>ナムラヒナギク</strong></td><td>0.156</td></tr><tr class=""><td>12位</td><td><strong>タイムレスキス</strong></td><td>0.146</td></tr><tr class=""><td>13位</td><td><strong>エングルマン</strong></td><td>0.141</td></tr><tr class=""><td>14位</td><td><strong>ザラタン</strong></td><td>0.085</td></tr><tr class=""><td>15位</td><td><strong>アイスヴィレッジ</strong></td><td>0.078</td></tr><tr class=""><td>16位</td><td><strong>カポレイラ</strong></td><td>0.074</td></tr><tr class=""><td>17位</td><td><strong>サマーブリザード</strong></td><td>0.045</td></tr><tr class=""><td>18位</td><td><strong>エスティヴァリス</strong></td><td>0.031</td></tr></table></div>
         <div id="panel-202608041101" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 京都 1R ｜ ダート1400m</div>
+                <div class="race-title">11月8日(日) 京都 1R ｜ ダート1400m</div>
                 <div><span style="color:var(--hot); font-weight:bold;">🔥 勝負</span></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>アヴレディール</strong></td><td>0.481</td></tr><tr class="rank-2"><td>2位</td><td><strong>ウメヒナタ</strong></td><td>0.447</td></tr><tr class="rank-3"><td>3位</td><td><strong>ホットハニーラグ</strong></td><td>0.371</td></tr><tr class=""><td>4位</td><td><strong>エールヴェヌス</strong></td><td>0.246</td></tr><tr class=""><td>5位</td><td><strong>ダヌラーサナ</strong></td><td>0.240</td></tr><tr class=""><td>6位</td><td><strong>ジョワイエトワール</strong></td><td>0.230</td></tr><tr class=""><td>7位</td><td><strong>スマートサロン</strong></td><td>0.221</td></tr><tr class=""><td>8位</td><td><strong>バッテリー</strong></td><td>0.221</td></tr><tr class=""><td>9位</td><td><strong>ルージュミスティカ</strong></td><td>0.219</td></tr><tr class=""><td>10位</td><td><strong>ラッキーハナコ</strong></td><td>0.201</td></tr><tr class=""><td>11位</td><td><strong>オンアロール</strong></td><td>0.123</td></tr></table><div class="buy-box"><div class="buy-title">🎫 推奨買い目: 三連複1頭軸流し (10点)</div><strong>軸馬:</strong> アヴレディール<br><strong>相手:</strong> ウメヒナタ, ホットハニーラグ, エールヴェヌス, ダヌラーサナ, ジョワイエトワール</div></div>
         <div id="panel-202608041102" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 京都 2R ｜ ダート1800m</div>
+                <div class="race-title">11月8日(日) 京都 2R ｜ ダート1800m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>マコトブリッツ</strong></td><td>0.428</td></tr><tr class="rank-2"><td>2位</td><td><strong>レアアース</strong></td><td>0.298</td></tr><tr class="rank-3"><td>3位</td><td><strong>プレヴォスト</strong></td><td>0.296</td></tr><tr class=""><td>4位</td><td><strong>オーロルドーレ</strong></td><td>0.279</td></tr><tr class=""><td>5位</td><td><strong>テーオータイタン</strong></td><td>0.257</td></tr><tr class=""><td>6位</td><td><strong>ジーティーアツモリ</strong></td><td>0.240</td></tr><tr class=""><td>7位</td><td><strong>グランビート</strong></td><td>0.212</td></tr><tr class=""><td>8位</td><td><strong>カザンミハラ</strong></td><td>0.202</td></tr><tr class=""><td>9位</td><td><strong>オーバーシュタイン</strong></td><td>0.202</td></tr><tr class=""><td>10位</td><td><strong>アンベリール</strong></td><td>0.192</td></tr><tr class=""><td>11位</td><td><strong>ドリームアース</strong></td><td>0.177</td></tr><tr class=""><td>12位</td><td><strong>ゲームイズマイン</strong></td><td>0.156</td></tr><tr class=""><td>13位</td><td><strong>ジェルメーヌ</strong></td><td>0.060</td></tr></table></div>
         <div id="panel-202608041103" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 京都 3R ｜ 芝2000m</div>
+                <div class="race-title">11月8日(日) 京都 3R ｜ 芝2000m</div>
                 <div><span style="color:var(--hot); font-weight:bold;">🔥 勝負</span></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>エトワールハマー</strong></td><td>0.611</td></tr><tr class="rank-2"><td>2位</td><td><strong>ペプチドデバイス</strong></td><td>0.443</td></tr><tr class="rank-3"><td>3位</td><td><strong>ベニールラヴニール</strong></td><td>0.317</td></tr><tr class=""><td>4位</td><td><strong>エコロリンド</strong></td><td>0.266</td></tr><tr class=""><td>5位</td><td><strong>ゴールデンステーラ</strong></td><td>0.259</td></tr><tr class=""><td>6位</td><td><strong>エールヴォル</strong></td><td>0.251</td></tr><tr class=""><td>7位</td><td><strong>シヴィリティ</strong></td><td>0.219</td></tr><tr class=""><td>8位</td><td><strong>ウィモウェ</strong></td><td>0.170</td></tr><tr class=""><td>9位</td><td><strong>ロードフェルム</strong></td><td>0.128</td></tr><tr class=""><td>10位</td><td><strong>アルバドラータ</strong></td><td>0.123</td></tr><tr class=""><td>11位</td><td><strong>カフジポポー</strong></td><td>0.122</td></tr><tr class=""><td>12位</td><td><strong>スナークルーベンス</strong></td><td>0.092</td></tr></table><div class="buy-box"><div class="buy-title">🎫 推奨買い目: 三連複1頭軸流し (10点)</div><strong>軸馬:</strong> エトワールハマー<br><strong>相手:</strong> ペプチドデバイス, ベニールラヴニール, エコロリンド, ゴールデンステーラ, エールヴォル</div></div>
         <div id="panel-202608041105" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 京都 5R ｜ 芝1600m</div>
+                <div class="race-title">11月8日(日) 京都 5R ｜ 芝1600m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>エスヴェドラ</strong></td><td>0.224</td></tr><tr class="rank-2"><td>2位</td><td><strong>ヒグマドン</strong></td><td>0.213</td></tr><tr class="rank-3"><td>3位</td><td><strong>ポジティブレンサ</strong></td><td>0.198</td></tr><tr class=""><td>4位</td><td><strong>ウルスス</strong></td><td>0.191</td></tr><tr class=""><td>5位</td><td><strong>サイモンソレアード</strong></td><td>0.189</td></tr><tr class=""><td>6位</td><td><strong>ロイヤルアイビス</strong></td><td>0.184</td></tr><tr class=""><td>7位</td><td><strong>テーオーディスタス</strong></td><td>0.183</td></tr><tr class=""><td>8位</td><td><strong>サヨノディーディー</strong></td><td>0.178</td></tr><tr class=""><td>9位</td><td><strong>カールイメル</strong></td><td>0.175</td></tr><tr class=""><td>10位</td><td><strong>サンオブシディアン</strong></td><td>0.175</td></tr><tr class=""><td>11位</td><td><strong>ラスゲアード</strong></td><td>0.171</td></tr><tr class=""><td>12位</td><td><strong>シルヴァニクス</strong></td><td>0.162</td></tr><tr class=""><td>13位</td><td><strong>コカボムタワー</strong></td><td>0.158</td></tr><tr class=""><td>14位</td><td><strong>ハクアイポルックス</strong></td><td>0.158</td></tr><tr class=""><td>15位</td><td><strong>ラブリーセブン</strong></td><td>0.156</td></tr><tr class=""><td>16位</td><td><strong>メイショウキラメキ</strong></td><td>0.144</td></tr><tr class=""><td>17位</td><td><strong>ウインヴァンガード</strong></td><td>0.141</td></tr></table></div>
         <div id="panel-202608041106" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 京都 6R ｜ ダート1800m</div>
+                <div class="race-title">11月8日(日) 京都 6R ｜ ダート1800m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>アブソリュートガイ</strong></td><td>0.227</td></tr><tr class="rank-2"><td>2位</td><td><strong>ロゼブレイズ</strong></td><td>0.220</td></tr><tr class="rank-3"><td>3位</td><td><strong>オールベット</strong></td><td>0.215</td></tr><tr class=""><td>4位</td><td><strong>アラパリパリョー</strong></td><td>0.213</td></tr><tr class=""><td>5位</td><td><strong>タマモウララカ</strong></td><td>0.209</td></tr><tr class=""><td>6位</td><td><strong>ダルマパワー</strong></td><td>0.205</td></tr><tr class=""><td>7位</td><td><strong>シャーマット</strong></td><td>0.196</td></tr><tr class=""><td>8位</td><td><strong>サイモンホライズン</strong></td><td>0.192</td></tr><tr class=""><td>9位</td><td><strong>タイセイアレグロ</strong></td><td>0.181</td></tr><tr class=""><td>10位</td><td><strong>ディヴィニダッド</strong></td><td>0.180</td></tr><tr class=""><td>11位</td><td><strong>コートドール</strong></td><td>0.174</td></tr><tr class=""><td>12位</td><td><strong>マジカルブラック</strong></td><td>0.173</td></tr><tr class=""><td>13位</td><td><strong>バンブトンウーノ</strong></td><td>0.171</td></tr><tr class=""><td>14位</td><td><strong>キタノディレク</strong></td><td>0.170</td></tr><tr class=""><td>15位</td><td><strong>ヴァルキリーキック</strong></td><td>0.159</td></tr><tr class=""><td>16位</td><td><strong>ニシノマサムネ</strong></td><td>0.115</td></tr></table></div>
         <div id="panel-202608041107" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 京都 7R ｜ ダート1400m</div>
+                <div class="race-title">11月8日(日) 京都 7R ｜ ダート1400m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>タガノプディング</strong></td><td>0.384</td></tr><tr class="rank-2"><td>2位</td><td><strong>マリリンバローズ</strong></td><td>0.314</td></tr><tr class="rank-3"><td>3位</td><td><strong>モズジェネラル</strong></td><td>0.307</td></tr><tr class=""><td>4位</td><td><strong>バトルアックス</strong></td><td>0.293</td></tr><tr class=""><td>5位</td><td><strong>ヴェルジーネ</strong></td><td>0.288</td></tr><tr class=""><td>6位</td><td><strong>ブロンテス</strong></td><td>0.252</td></tr><tr class=""><td>7位</td><td><strong>ムテキシャチョウ</strong></td><td>0.237</td></tr><tr class=""><td>8位</td><td><strong>スズノソレイユ</strong></td><td>0.165</td></tr><tr class=""><td>9位</td><td><strong>リテラシー</strong></td><td>0.150</td></tr><tr class=""><td>10位</td><td><strong>ダノンクロム</strong></td><td>0.124</td></tr><tr class=""><td>11位</td><td><strong>サリカリーフォリア</strong></td><td>0.116</td></tr><tr class=""><td>12位</td><td><strong>デュアルロール</strong></td><td>0.107</td></tr><tr class=""><td>13位</td><td><strong>メイショウビストロ</strong></td><td>0.089</td></tr><tr class=""><td>14位</td><td><strong>インピッシュ</strong></td><td>0.066</td></tr><tr class=""><td>15位</td><td><strong>ブレイジングスター</strong></td><td>0.058</td></tr><tr class=""><td>16位</td><td><strong>マルモア</strong></td><td>0.050</td></tr></table></div>
         <div id="panel-202608041108" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 京都 8R ｜ 芝2200m</div>
+                <div class="race-title">11月8日(日) 京都 8R ｜ 芝2200m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>マイコンプリート</strong></td><td>0.356</td></tr><tr class="rank-2"><td>2位</td><td><strong>ムスクレスト</strong></td><td>0.308</td></tr><tr class="rank-3"><td>3位</td><td><strong>パーヴォ</strong></td><td>0.277</td></tr><tr class=""><td>4位</td><td><strong>ダノンミッドナイト</strong></td><td>0.276</td></tr><tr class=""><td>5位</td><td><strong>ニホンピロロジャー</strong></td><td>0.260</td></tr><tr class=""><td>6位</td><td><strong>オープンザパンドラ</strong></td><td>0.244</td></tr><tr class=""><td>7位</td><td><strong>ガウディ</strong></td><td>0.230</td></tr><tr class=""><td>8位</td><td><strong>ゴールドアクセス</strong></td><td>0.225</td></tr><tr class=""><td>9位</td><td><strong>クラウディアイ</strong></td><td>0.218</td></tr><tr class=""><td>10位</td><td><strong>フララナキラ</strong></td><td>0.175</td></tr><tr class=""><td>11位</td><td><strong>プレデスティナーレ</strong></td><td>0.159</td></tr><tr class=""><td>12位</td><td><strong>サトノビダーヤ</strong></td><td>0.145</td></tr><tr class=""><td>13位</td><td><strong>リトルスカーレット</strong></td><td>0.081</td></tr><tr class=""><td>14位</td><td><strong>ピエナオルフェ</strong></td><td>0.047</td></tr></table></div>
         <div id="panel-202608041109" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 京都 9R ｜ ダート1800m</div>
+                <div class="race-title">11月8日(日) 京都 9R ｜ ダート1800m</div>
                 <div><span style="color:var(--hot); font-weight:bold;">🔥 勝負</span></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>ロードアマルフィ</strong></td><td>0.544</td></tr><tr class="rank-2"><td>2位</td><td><strong>タガノエルー</strong></td><td>0.414</td></tr><tr class="rank-3"><td>3位</td><td><strong>ビルンバウム</strong></td><td>0.413</td></tr><tr class=""><td>4位</td><td><strong>ニホンピロデヴィン</strong></td><td>0.355</td></tr><tr class=""><td>5位</td><td><strong>アトモス</strong></td><td>0.350</td></tr><tr class=""><td>6位</td><td><strong>タガノアルトゥーラ</strong></td><td>0.333</td></tr><tr class=""><td>7位</td><td><strong>ダディーズトリップ</strong></td><td>0.184</td></tr><tr class=""><td>8位</td><td><strong>サイモンゼスト</strong></td><td>0.168</td></tr><tr class=""><td>9位</td><td><strong>ジーニアスバローズ</strong></td><td>0.164</td></tr><tr class=""><td>10位</td><td><strong>ゼットレジーナ</strong></td><td>0.075</td></tr></table><div class="buy-box"><div class="buy-title">🎫 推奨買い目: 三連複1頭軸流し (10点)</div><strong>軸馬:</strong> ロードアマルフィ<br><strong>相手:</strong> タガノエルー, ビルンバウム, ニホンピロデヴィン, アトモス, タガノアルトゥーラ</div></div>
         <div id="panel-202608041110" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 京都 10R ｜ 芝3000m</div>
+                <div class="race-title">11月8日(日) 京都 10R ｜ 芝3000m</div>
                 <div><span style="color:var(--hot); font-weight:bold;">🔥 勝負</span></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>アスクデッドヒート</strong></td><td>0.505</td></tr><tr class="rank-2"><td>2位</td><td><strong>ファームツエンティ</strong></td><td>0.481</td></tr><tr class="rank-3"><td>3位</td><td><strong>ウイナーズナイン</strong></td><td>0.354</td></tr><tr class=""><td>4位</td><td><strong>タイセイフェリーク</strong></td><td>0.339</td></tr><tr class=""><td>5位</td><td><strong>ディヴァインスター</strong></td><td>0.318</td></tr><tr class=""><td>6位</td><td><strong>エコロレイズ</strong></td><td>0.303</td></tr><tr class=""><td>7位</td><td><strong>ウィープディライト</strong></td><td>0.297</td></tr><tr class=""><td>8位</td><td><strong>ダカラフェスティヴ</strong></td><td>0.207</td></tr><tr class=""><td>9位</td><td><strong>プレシャスデイ</strong></td><td>0.197</td></tr></table><div class="buy-box"><div class="buy-title">🎫 推奨買い目: 三連複1頭軸流し (10点)</div><strong>軸馬:</strong> アスクデッドヒート<br><strong>相手:</strong> ファームツエンティ, ウイナーズナイン, タイセイフェリーク, ディヴァインスター, エコロレイズ</div></div>
         <div id="panel-202608041111" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 京都 11R ｜ 芝1600m</div>
+                <div class="race-title">11月8日(日) 京都 11R ｜ 芝1600m</div>
                 <div><span style="color:var(--hot); font-weight:bold;">🔥 勝負</span></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
         <tr class="rank-1"><td>1位</td><td><strong>スマートワイス</strong></td><td>0.481</td></tr><tr class="rank-2"><td>2位</td><td><strong>ガロンヌ</strong></td><td>0.376</td></tr><tr class="rank-3"><td>3位</td><td><strong>ダイシンヤマト</strong></td><td>0.313</td></tr><tr class=""><td>4位</td><td><strong>レザベーション</strong></td><td>0.273</td></tr><tr class=""><td>5位</td><td><strong>キョウエイブリッサ</strong></td><td>0.251</td></tr><tr class=""><td>6位</td><td><strong>ビップデイジー</strong></td><td>0.232</td></tr><tr class=""><td>7位</td><td><strong>ムイ</strong></td><td>0.183</td></tr><tr class=""><td>8位</td><td><strong>セオ</strong></td><td>0.182</td></tr><tr class=""><td>9位</td><td><strong>ブエナオンダ</strong></td><td>0.175</td></tr><tr class=""><td>10位</td><td><strong>ショウナンアデイブ</strong></td><td>0.172</td></tr><tr class=""><td>11位</td><td><strong>クファシル</strong></td><td>0.147</td></tr><tr class=""><td>12位</td><td><strong>テリオスララ</strong></td><td>0.117</td></tr><tr class=""><td>13位</td><td><strong>メイショウシンタケ</strong></td><td>0.098</td></tr></table><div class="buy-box"><div class="buy-title">🎫 推奨買い目: 三連複1頭軸流し (10点)</div><strong>軸馬:</strong> スマートワイス<br><strong>相手:</strong> ガロンヌ, ダイシンヤマト, レザベーション, キョウエイブリッサ, ビップデイジー</div></div>
         <div id="panel-202608041112" class="panel">
             <div class="race-header">
-                <div class="race-title">11月1日(日) 京都 12R ｜ 芝1400m</div>
+                <div class="race-title">11月8日(日) 京都 12R ｜ 芝1400m</div>
                 <div></div>
             </div>
             <table><tr><th>順位</th><th>馬名</th><th>スコア</th></tr>
@@ -454,9 +445,13 @@
             }
 
             window.onload = function() {
-                const raceData = [{"id": "202605041001", "date": "10月31日(土)", "venue": "東京", "race_num": "1R", "is_hot": np.false_}, {"id": "202605041002", "date": "10月31日(土)", "venue": "東京", "race_num": "2R", "is_hot": np.true_}, {"id": "202605041003", "date": "10月31日(土)", "venue": "東京", "race_num": "3R", "is_hot": np.true_}, {"id": "202605041004", "date": "10月31日(土)", "venue": "東京", "race_num": "4R", "is_hot": np.false_}, {"id": "202605041005", "date": "10月31日(土)", "venue": "東京", "race_num": "5R", "is_hot": np.false_}, {"id": "202605041006", "date": "10月31日(土)", "venue": "東京", "race_num": "6R", "is_hot": np.false_}, {"id": "202605041007", "date": "10月31日(土)", "venue": "東京", "race_num": "7R", "is_hot": np.false_}, {"id": "202605041008", "date": "10月31日(土)", "venue": "東京", "race_num": "8R", "is_hot": np.false_}, {"id": "202605041009", "date": "10月31日(土)", "venue": "東京", "race_num": "9R", "is_hot": np.false_}, {"id": "202605041010", "date": "10月31日(土)", "venue": "東京", "race_num": "10R", "is_hot": np.true_}, {"id": "202605041011", "date": "10月31日(土)", "venue": "東京", "race_num": "11R", "is_hot": np.false_}, {"id": "202605041012", "date": "10月31日(土)", "venue": "東京", "race_num": "12R", "is_hot": np.false_}, {"id": "202605041101", "date": "11月1日(日)", "venue": "東京", "race_num": "1R", "is_hot": np.true_}, {"id": "202605041102", "date": "11月1日(日)", "venue": "東京", "race_num": "2R", "is_hot": np.false_}, {"id": "202605041103", "date": "11月1日(日)", "venue": "東京", "race_num": "3R", "is_hot": np.true_}, {"id": "202605041104", "date": "11月1日(日)", "venue": "東京", "race_num": "4R", "is_hot": np.false_}, {"id": "202605041105", "date": "11月1日(日)", "venue": "東京", "race_num": "5R", "is_hot": np.true_}, {"id": "202605041106", "date": "11月1日(日)", "venue": "東京", "race_num": "6R", "is_hot": np.false_}, {"id": "202605041107", "date": "11月1日(日)", "venue": "東京", "race_num": "7R", "is_hot": np.false_}, {"id": "202605041108", "date": "11月1日(日)", "venue": "東京", "race_num": "8R", "is_hot": np.true_}, {"id": "202605041109", "date": "11月1日(日)", "venue": "東京", "race_num": "9R", "is_hot": np.false_}, {"id": "202605041110", "date": "11月1日(日)", "venue": "東京", "race_num": "10R", "is_hot": np.false_}, {"id": "202605041111", "date": "11月1日(日)", "venue": "東京", "race_num": "11R", "is_hot": np.false_}, {"id": "202605041112", "date": "11月1日(日)", "venue": "東京", "race_num": "12R", "is_hot": np.false_}, {"id": "202608041001", "date": "10月31日(土)", "venue": "京都", "race_num": "1R", "is_hot": np.false_}, {"id": "202608041002", "date": "10月31日(土)", "venue": "京都", "race_num": "2R", "is_hot": np.true_}, {"id": "202608041003", "date": "10月31日(土)", "venue": "京都", "race_num": "3R", "is_hot": np.true_}, {"id": "202608041005", "date": "10月31日(土)", "venue": "京都", "race_num": "5R", "is_hot": np.false_}, {"id": "202608041006", "date": "10月31日(土)", "venue": "京都", "race_num": "6R", "is_hot": np.false_}, {"id": "202608041007", "date": "10月31日(土)", "venue": "京都", "race_num": "7R", "is_hot": np.true_}, {"id": "202608041008", "date": "10月31日(土)", "venue": "京都", "race_num": "8R", "is_hot": np.false_}, {"id": "202608041009", "date": "10月31日(土)", "venue": "京都", "race_num": "9R", "is_hot": np.true_}, {"id": "202608041010", "date": "10月31日(土)", "venue": "京都", "race_num": "10R", "is_hot": np.false_}, {"id": "202608041011", "date": "10月31日(土)", "venue": "京都", "race_num": "11R", "is_hot": np.false_}, {"id": "202608041012", "date": "10月31日(土)", "venue": "京都", "race_num": "12R", "is_hot": np.false_}, {"id": "202608041101", "date": "11月1日(日)", "venue": "京都", "race_num": "1R", "is_hot": np.true_}, {"id": "202608041102", "date": "11月1日(日)", "venue": "京都", "race_num": "2R", "is_hot": np.false_}, {"id": "202608041103", "date": "11月1日(日)", "venue": "京都", "race_num": "3R", "is_hot": np.true_}, {"id": "202608041105", "date": "11月1日(日)", "venue": "京都", "race_num": "5R", "is_hot": np.false_}, {"id": "202608041106", "date": "11月1日(日)", "venue": "京都", "race_num": "6R", "is_hot": np.false_}, {"id": "202608041107", "date": "11月1日(日)", "venue": "京都", "race_num": "7R", "is_hot": np.false_}, {"id": "202608041108", "date": "11月1日(日)", "venue": "京都", "race_num": "8R", "is_hot": np.false_}, {"id": "202608041109", "date": "11月1日(日)", "venue": "京都", "race_num": "9R", "is_hot": np.true_}, {"id": "202608041110", "date": "11月1日(日)", "venue": "京都", "race_num": "10R", "is_hot": np.true_}, {"id": "202608041111", "date": "11月1日(日)", "venue": "京都", "race_num": "11R", "is_hot": np.true_}, {"id": "202608041112", "date": "11月1日(日)", "venue": "京都", "race_num": "12R", "is_hot": np.false_}];
-                const groups = {};
+                const raceData = [{"id": "202605041001", "date": "11月7日(土)", "venue": "東京", "race_num": "1R", "is_hot": np.false_}, {"id": "202605041002", "date": "11月7日(土)", "venue": "東京", "race_num": "2R", "is_hot": np.true_}, {"id": "202605041003", "date": "11月7日(土)", "venue": "東京", "race_num": "3R", "is_hot": np.true_}, {"id": "202605041004", "date": "11月7日(土)", "venue": "東京", "race_num": "4R", "is_hot": np.false_}, {"id": "202605041005", "date": "11月7日(土)", "venue": "東京", "race_num": "5R", "is_hot": np.false_}, {"id": "202605041006", "date": "11月7日(土)", "venue": "東京", "race_num": "6R", "is_hot": np.false_}, {"id": "202605041007", "date": "11月7日(土)", "venue": "東京", "race_num": "7R", "is_hot": np.false_}, {"id": "202605041008", "date": "11月7日(土)", "venue": "東京", "race_num": "8R", "is_hot": np.false_}, {"id": "202605041009", "date": "11月7日(土)", "venue": "東京", "race_num": "9R", "is_hot": np.false_}, {"id": "202605041010", "date": "11月7日(土)", "venue": "東京", "race_num": "10R", "is_hot": np.true_}, {"id": "202605041011", "date": "11月7日(土)", "venue": "東京", "race_num": "11R", "is_hot": np.false_}, {"id": "202605041012", "date": "11月7日(土)", "venue": "東京", "race_num": "12R", "is_hot": np.false_}, {"id": "202605041101", "date": "11月8日(日)", "venue": "東京", "race_num": "1R", "is_hot": np.true_}, {"id": "202605041102", "date": "11月8日(日)", "venue": "東京", "race_num": "2R", "is_hot": np.false_}, {"id": "202605041103", "date": "11月8日(日)", "venue": "東京", "race_num": "3R", "is_hot": np.true_}, {"id": "202605041104", "date": "11月8日(日)", "venue": "東京", "race_num": "4R", "is_hot": np.false_}, {"id": "202605041105", "date": "11月8日(日)", "venue": "東京", "race_num": "5R", "is_hot": np.true_}, {"id": "202605041106", "date": "11月8日(日)", "venue": "東京", "race_num": "6R", "is_hot": np.false_}, {"id": "202605041107", "date": "11月8日(日)", "venue": "東京", "race_num": "7R", "is_hot": np.false_}, {"id": "202605041108", "date": "11月8日(日)", "venue": "東京", "race_num": "8R", "is_hot": np.true_}, {"id": "202605041109", "date": "11月8日(日)", "venue": "東京", "race_num": "9R", "is_hot": np.false_}, {"id": "202605041110", "date": "11月8日(日)", "venue": "東京", "race_num": "10R", "is_hot": np.false_}, {"id": "202605041111", "date": "11月8日(日)", "venue": "東京", "race_num": "11R", "is_hot": np.false_}, {"id": "202605041112", "date": "11月8日(日)", "venue": "東京", "race_num": "12R", "is_hot": np.false_}, {"id": "202608041001", "date": "11月7日(土)", "venue": "京都", "race_num": "1R", "is_hot": np.false_}, {"id": "202608041002", "date": "11月7日(土)", "venue": "京都", "race_num": "2R", "is_hot": np.true_}, {"id": "202608041003", "date": "11月7日(土)", "venue": "京都", "race_num": "3R", "is_hot": np.true_}, {"id": "202608041005", "date": "11月7日(土)", "venue": "京都", "race_num": "5R", "is_hot": np.false_}, {"id": "202608041006", "date": "11月7日(土)", "venue": "京都", "race_num": "6R", "is_hot": np.false_}, {"id": "202608041007", "date": "11月7日(土)", "venue": "京都", "race_num": "7R", "is_hot": np.true_}, {"id": "202608041008", "date": "11月7日(土)", "venue": "京都", "race_num": "8R", "is_hot": np.false_}, {"id": "202608041009", "date": "11月7日(土)", "venue": "京都", "race_num": "9R", "is_hot": np.true_}, {"id": "202608041010", "date": "11月7日(土)", "venue": "京都", "race_num": "10R", "is_hot": np.false_}, {"id": "202608041011", "date": "11月7日(土)", "venue": "京都", "race_num": "11R", "is_hot": np.false_}, {"id": "202608041012", "date": "11月7日(土)", "venue": "京都", "race_num": "12R", "is_hot": np.false_}, {"id": "202608041101", "date": "11月8日(日)", "venue": "京都", "race_num": "1R", "is_hot": np.true_}, {"id": "202608041102", "date": "11月8日(日)", "venue": "京都", "race_num": "2R", "is_hot": np.false_}, {"id": "202608041103", "date": "11月8日(日)", "venue": "京都", "race_num": "3R", "is_hot": np.true_}, {"id": "202608041105", "date": "11月8日(日)", "venue": "京都", "race_num": "5R", "is_hot": np.false_}, {"id": "202608041106", "date": "11月8日(日)", "venue": "京都", "race_num": "6R", "is_hot": np.false_}, {"id": "202608041107", "date": "11月8日(日)", "venue": "京都", "race_num": "7R", "is_hot": np.false_}, {"id": "202608041108", "date": "11月8日(日)", "venue": "京都", "race_num": "8R", "is_hot": np.false_}, {"id": "202608041109", "date": "11月8日(日)", "venue": "京都", "race_num": "9R", "is_hot": np.true_}, {"id": "202608041110", "date": "11月8日(日)", "venue": "京都", "race_num": "10R", "is_hot": np.true_}, {"id": "202608041111", "date": "11月8日(日)", "venue": "京都", "race_num": "11R", "is_hot": np.true_}, {"id": "202608041112", "date": "11月8日(日)", "venue": "京都", "race_num": "12R", "is_hot": np.false_}];
+                if (raceData.length === 0) {
+                    document.getElementById('sidebar').innerHTML = '<div style="padding:20px; color:#64748b;">🏇 データがありません。</div>';
+                    return;
+                }
                 
+                const groups = {};
                 raceData.forEach(r => {
                     if (!groups[r.date]) groups[r.date] = {};
                     if (!groups[r.date][r.venue]) groups[r.date][r.venue] = [];
