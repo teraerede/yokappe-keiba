@@ -232,10 +232,10 @@
                         </div>
                     </div>
                     <div style="text-align:center; font-size:0.8rem; color:var(--text-muted); margin-top:10px;">
-                        ※集計期間: 11/7~11/15
+                        ※集計期間: 11/7~11/8
                     </div>
                     <div style="text-align:center;">
-                        <a href="https://x.com/yokappekeiba" target="_blank" rel="noopener noreferrer" class="x-link-btn">
+                        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="x-link-btn">
                             𝕏 公式Xで過去の的中・結果まとめを見る
                         </a>
                     </div>
@@ -800,8 +800,17 @@
                     groups[r.date][r.venue].push(r);
                 });
                 
+                const sortedDates = Object.keys(groups).sort((a, b) => {
+                    const parseDateNum = (s) => {
+                        const m = s.match(/(\d+)月(\d+)日/);
+                        return m ? parseInt(m[1], 10) * 100 + parseInt(m[2], 10) : 9999;
+                    };
+                    return parseDateNum(a) - parseDateNum(b);
+                });
+
                 let menuHtml = '';
-                for (const [dateStr, venues] of Object.entries(groups)) {
+                for (const dateStr of sortedDates) {
+                    const venues = groups[dateStr];
                     menuHtml += `<details open><summary>📅 ${dateStr}</summary>`;
                     for (const [venueName, races] of Object.entries(venues)) {
                         menuHtml += `<details class="venue-group" open><summary>📍 ${venueName}</summary><div>`;
